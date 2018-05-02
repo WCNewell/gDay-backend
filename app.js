@@ -3,19 +3,21 @@ const morgan = require("morgan")
 const aws = require("aws-sdk")
 const multer = require("multer")
 const multerS3 = require("multer-s3")
-
 const dbConnection = require("./connection.js")
-const PORT = process.env.PORT || 3000
+
+require('dotenv').config()
+
 const app = express()
 const router = express.Router()
+const PORT = process.env.PORT || 3000
 
 // This creates an authenticated S3 instance
 const s3 = new aws.S3({
     apiVersion: "2006-03-01",
     region: process.env.S3_BUCKET_REGION,
     credentials: {
-        secretAccessKey: process.env.80K33PNAgW4wwJTTJ8fYeNS0SwTE+rdLB2A3bm9a,
-        accessKeyId: process.env.AKIAIGSNH5DMDYJLER2A
+        secretAccessKey: process.env.S3_SECRET_ACCESS_KEY,
+        accessKeyId: process.env.S3_ACCESS_KEY_ID
     }
 })
 
@@ -30,7 +32,7 @@ const upload = multer({
 
 router.post("/upload", upload.single("file"), (request, response) => {
     response.json({data: request.file.location});
-});
+})
 
 module.exports = router;
 
@@ -52,9 +54,5 @@ app.get("/:id", (request, response) => {
     .catch(error => response.status(500).json({ error: error.message, stack: error.status })
     )
 })
-
-
-
-
 
 app.listen(PORT, () => console.log("Example app running")) //hello

@@ -23,7 +23,7 @@ const s3 = new aws.S3({
 
 const upload = multer({
     storage: multerS3({
-        s3, bucket: process.env.gday-m8,
+        s3, bucket: process.env.S3_BUCKET_NAME,
         key: (request, file, next) => { 
             next(null, `files/${Date.now()}_${file.originalname}`);
         }

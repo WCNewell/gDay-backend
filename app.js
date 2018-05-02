@@ -55,4 +55,4 @@ app.get("/:id", (request, response) => {
     )
 })
 
-app.listen(PORT, () => console.log("Example app running")) //hello
+app.listen(PORT, () => console.log("gDAY Back-end Running"))

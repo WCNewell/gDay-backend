@@ -4,7 +4,8 @@ const aws = require("aws-sdk")
 const multer = require("multer")
 const multerS3 = require("multer-s3")
 const dbConnection = require("./connection.js")
-
+const cors = require("cors"
+)
 require('dotenv').config()
 
 const app = express()
@@ -37,6 +38,7 @@ router.post("/upload", upload.single("file"), (request, response) => {
 module.exports = router;
 
 app.use(morgan(process.env.NODE_ENV !== "production" ? "dev" : "combined"))
+app.use(cors({ origin: true }))
 
 app.get('/', (request, response) => {
     dbConnection('student')

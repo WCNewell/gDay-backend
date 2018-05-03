@@ -45,8 +45,6 @@ exports.seed = function(knex, Promise) {
           password: 'password',
           cohort: '70'
         },
-        
-        //how can we make this populate automatically with user submission? some sort of function?
       ]);
     });
 };

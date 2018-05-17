@@ -10,7 +10,7 @@
 
 * The frontend repository hosts the client.
 
-* To run this application locally, clone both the frontend <<https://github.com/SavannahAdamsss/gDay.git> and backend <https://github.com/SavannahAdamsss/gDay-backend.git> repositories, use lite-server, live-server, or npm run dev from the terminal.
+* To run this application locally, clone both the frontend <https://github.com/SavannahAdamsss/gDay.git> and backend <https://github.com/SavannahAdamsss/gDay-backend.git> repositories, use lite-server, live-server, or npm run dev from the terminal.
 
 * Front-end files are located here: <https://github.com/SavannahAdamsss/gDay.git>
 
